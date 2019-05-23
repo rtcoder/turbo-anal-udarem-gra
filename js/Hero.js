@@ -4,7 +4,7 @@ class Hero {
         this.exp = 0;
         this.maxLives = 100;
         this.lives = 100;
-
+        this.money = 50;
         this.avatar = 'img/1.png';
         this.position = {
             x: 0,
