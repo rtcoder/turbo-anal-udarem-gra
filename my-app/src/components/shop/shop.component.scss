@@ -1,0 +1,99 @@
+.shop {
+  display: flex;
+  flex-direction: column;
+
+  .title {
+    display: flex;
+    align-items: center;
+
+    mat-icon {
+      font-size: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 5px;
+    }
+
+    h1 {
+      text-transform: uppercase;
+    }
+  }
+
+  & > * {
+    width: 100vw;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 40px;
+    color: gold;
+
+    mat-icon {
+      margin-right: 5px;
+    }
+  }
+
+  .equipment {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex: 1;
+
+    .section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &.coin {
+        color: gold;
+      }
+
+      &.armor {
+        color: silver;
+      }
+
+      &.power {
+        color: darkred;
+      }
+
+      &.health {
+        color: green;
+      }
+
+      > span {
+        text-align: center;
+      }
+
+      mat-icon {
+        &.arrow-up {
+          color: #eeeeee;
+          font-size: 25px;
+
+          &.disabled {
+            color: #696969;
+          }
+        }
+      }
+
+      .middle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 5px 0;
+
+        .price {
+          color: gold;
+          margin-left: 3px;
+          font-size: 12px;
+
+          &.disabled {
+            color: #696969;
+          }
+        }
+      }
+    }
+  }
+}

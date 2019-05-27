@@ -1,0 +1,43 @@
+<div class="shop">
+    <div class="title" (click)="backToGame()">
+        <mat-icon>keyboard_arrow_left</mat-icon>
+        <h1>shop</h1>
+    </div>
+    <div class="info">
+        <mat-icon class="coin">monetization_on</mat-icon>
+        <span>{{player?.money}}</span>
+    </div>
+    <div class="equipment">
+        <div class="section armor">
+            <mat-icon class="arrow-up" [ngClass]="{'disabled': !hasMoney(prices.armor)}" (click)="buyArmor()">
+                keyboard_arrow_up
+            </mat-icon>
+            <div class="middle">
+                <mat-icon>security</mat-icon>
+                <span class="price" [ngClass]="{'disabled': !hasMoney(prices.armor)}">${{prices.armor}}</span>
+            </div>
+            <span>Armor: {{player?.armor}}</span>
+        </div>
+        <div class="section power">
+            <mat-icon class="arrow-up" [ngClass]="{'disabled': !hasMoney(prices.power)}" (click)="buyPower()">
+                keyboard_arrow_up
+            </mat-icon>
+            <div class="middle">
+                <mat-icon>whatshot</mat-icon>
+                <span class="price" [ngClass]="{'disabled': !hasMoney(prices.power)}">${{prices.power}}</span>
+            </div>
+            <span>Power: {{player?.power}}</span>
+        </div>
+        <div class="section health">
+            <mat-icon class="arrow-up" [ngClass]="{'disabled': !hasMoney(prices.healthPotion)}"
+                      (click)="buyHealthPotion()">keyboard_arrow_up
+            </mat-icon>
+            <div class="middle">
+                <mat-icon>spa</mat-icon>
+                <span class="price"
+                      [ngClass]="{'disabled': !hasMoney(prices.healthPotion)}">${{prices.healthPotion}}</span>
+            </div>
+            <span>Health potions: {{player?.healthElixirs}}</span>
+        </div>
+    </div>
+</div>

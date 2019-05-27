@@ -8,10 +8,23 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    font-family: 'Just Me Again Down Here', cursive;
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
 }
 
 html, body, canvas {
     width: 100vw;
     height: 100vh;
     display: flex;
+    overflow: hidden;
+    background: #3d3d3d;
+    color: #ffffff;
+}
+
+body > app-root,
+body > app-root > * {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
 }

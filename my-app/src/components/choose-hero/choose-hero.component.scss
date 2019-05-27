@@ -1,0 +1,45 @@
+.choose-heroes {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+
+  .hero-info {
+    color: #eeeeee;
+    font-size: 20px;
+    line-height: 25px;
+  }
+
+  .hero-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    mat-icon {
+      color: #eeeeee;
+      font-size: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 60px;
+    }
+  }
+
+  button#choose {
+    width: 100px;
+    height: 50px;
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+
+    &:hover {
+      background: #dedede;
+      color: #1a1a1a;
+    }
+  }
+}

@@ -1,0 +1,4 @@
+<app-game [player]="player" *ngIf="view === 'game'"></app-game>
+<app-choose-hero *ngIf="view === 'choose-hero'"></app-choose-hero>
+<app-shop *ngIf="view === 'shop'" [player]="player"></app-shop>
+<app-intro-screen *ngIf="view === 'intro'"></app-intro-screen>

@@ -1,0 +1,13 @@
+<div class="choose-heroes">
+    <div class="hero-info">
+        <p>Imię: {{heroesAvatars[heroIndex].name}}</p>
+<!--        <p>Supermoc: {{heroesAvatars[heroIndex].superPower}}</p>-->
+    </div>
+    <div class="hero-container">
+        <mat-icon (click)="previous()">keyboard_arrow_left</mat-icon>
+        <img [src]="heroesAvatars[heroIndex].src" alt="">
+        <mat-icon (click)="next()">keyboard_arrow_right</mat-icon>
+    </div>
+    <button mat-button color="primary" (click)="selectHero()">Wybierz</button>
+</div>
+
