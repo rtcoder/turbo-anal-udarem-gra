@@ -3,28 +3,40 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {ChooseHeroComponent} from '../components/choose-hero/choose-hero.component';
-import {ShopComponent} from '../components/shop/shop.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {MatButtonModule, MatIconModule, MatSnackBarModule} from "@angular/material";
-import { IntroScreenComponent } from '../components/intro-screen/intro-screen.component';
-import { GameComponent } from '../components/game/game.component';
+import {
+    MAT_DIALOG_DEFAULT_OPTIONS,
+    MatButtonModule,
+    MatDialogModule,
+    MatIconModule,
+    MatSnackBarModule
+} from "@angular/material";
+import {IntroScreenComponent} from '../components/intro-screen/intro-screen.component';
+import {GameComponent} from '../components/game/game.component';
+import {EquipmentDialogComponent} from "../components/equipment-dialog/equipment-dialog.component";
 
 @NgModule({
     declarations: [
         AppComponent,
+        EquipmentDialogComponent,
         ChooseHeroComponent,
-        ShopComponent,
         IntroScreenComponent,
         GameComponent,
+    ],
+    entryComponents: [
+        EquipmentDialogComponent,
     ],
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
         MatButtonModule,
         MatSnackBarModule,
-        MatIconModule
+        MatIconModule,
+        MatDialogModule,
     ],
-    providers: [],
+    providers: [
+        {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {

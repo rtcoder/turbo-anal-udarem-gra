@@ -40,7 +40,7 @@ class Game {
             }
 
         }
-        if (this.view === 'shop') {
+        if (this.view === 'equipment-dialog') {
         }
 
         if (this.view === 'game') {

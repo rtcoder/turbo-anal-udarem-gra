@@ -3,6 +3,8 @@ import {Hero} from "../models/hero.model";
 import {ViewType} from "../types/view.type";
 import {GameService} from "../services/game.service";
 import {HeroAvatarInterface} from "../interfaces/hero-avatar.interface";
+import {MatDialog} from "@angular/material";
+import {EquipmentDialogComponent} from "../components/equipment-dialog/equipment-dialog.component";
 
 @Component({
     selector: 'app-root',
@@ -13,11 +15,12 @@ export class AppComponent {
     view: ViewType = "intro";
     player: Hero;
 
-    constructor(public gameService: GameService) {
+    constructor(public gameService: GameService,
+                public dialog: MatDialog) {
         gameService.onSelectHero.subscribe((avatar: HeroAvatarInterface) => {
             if (!this.player) {
                 this.player = new Hero(avatar);
-                this.gameService.changeView("shop");
+                this.gameService.changeView("game");
             }
         });
         gameService.onViewChange.subscribe((view: ViewType) => this.view = view);
@@ -28,4 +31,25 @@ export class AppComponent {
         $event.preventDefault();
     }
 
+    @HostListener('document:keypress', ['$event'])
+    onKeyPress($event: KeyboardEvent) {
+        switch ($event.key.toLowerCase()) {
+            case 'e':
+                if (this.view === "intro") {
+                    return;
+                }
+                const dialogRef = this.dialog.open(EquipmentDialogComponent, {
+                    data: this.player.equipment,
+                    width: '250px',
+                });
+                dialogRef.afterClosed().subscribe(result => {
+                    console.log('The dialog was closed', result);
+
+                });
+                break;
+            default:
+                $event.preventDefault();
+
+        }
+    }
 }

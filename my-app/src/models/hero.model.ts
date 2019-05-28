@@ -1,4 +1,5 @@
 import {HeroAvatarInterface} from "../interfaces/hero-avatar.interface";
+import {HeroEquipment} from "../interfaces/hero-equipment.interface";
 
 export class Hero {
     experience: 0;
@@ -6,10 +7,12 @@ export class Hero {
     lives = 100;
     avatar: HeroAvatarInterface;
     level = 1;
-    power = 1;
-    armor = 1;
-    money = 50;
-    healthElixirs = 0;
+    equipment: HeroEquipment = {
+        power: 1,
+        armor: 1,
+        money: 50,
+        healthElixirs: 0
+    };
     isPlayerTurn = true;
 
     constructor(avatar: HeroAvatarInterface) {
